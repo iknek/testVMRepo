@@ -3,12 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
 spec:
+  storageClassName: cinder-sc
   accessModes:
     - ReadWriteOnce
-  storageClassName: ""
   resources:
     requests:
       storage: 5Gi
-  selector:
-    matchLabels:
-      name: mongodb-pv 

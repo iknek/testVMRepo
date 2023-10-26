@@ -1,21 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-    name: mongodb-pv
+  name: mongo-pv
+  labels:
+    name: mongo-pv
 spec:
   capacity:
     storage: 5Gi
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  local:
-    path: /mnt/data
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: size
-          operator: In
-          values:
-            - medium
+  hostPath:
+    path: "/home/vol/mongo-vol"

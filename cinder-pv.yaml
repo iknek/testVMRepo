@@ -3,11 +3,12 @@ kind: PersistentVolume
 metadata:
   name: mongo-pv
   labels:
-    name: mongo-pv  # Added
+    name: mongo-pv
 spec:
   capacity:
     storage: 5Gi
   accessModes:
     - ReadWriteOnce
+persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: "/home/vol/mongo-vol"

@@ -1,14 +1,13 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: mongo-pvc
+  name: mongo-pv
+  labels:
+    name: mongo-pv  # Added
 spec:
+  capacity:
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: ""
-  resources:
-    requests:
-      storage: 5Gi
-  selector:
-    matchLabels:
-      name: mongo-pv
+  hostPath:
+    path: "/home/vol/mongo-vol"

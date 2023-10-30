@@ -12,3 +12,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: "/home/vol/mongo-vol"
+  cinder: 
+    volumeID: "c50eca2c-e7f7-405b-b268-983874b26cdb"

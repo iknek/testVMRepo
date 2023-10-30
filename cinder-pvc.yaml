@@ -9,3 +9,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
+  selector:
+    matchLabels:
+      name: mongo-pv
+  storageClassName: ""

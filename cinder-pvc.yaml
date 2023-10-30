@@ -11,5 +11,5 @@ spec:
       storage: 5Gi
   selector:
     matchLabels:
-      name: mongo-pv
+      name: mongodb-pv
   storageClassName: ""
